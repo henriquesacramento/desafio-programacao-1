@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/king601/devise-bootstrapped.git
+  revision: 02e5259cfaa980deeb3e190ac5a49c9254caa867
+  branch: bootstrap4
+  specs:
+    devise-bootstrapped (0.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -345,6 +352,7 @@ DEPENDENCIES
   coffee-rails (= 4.2.2)
   database_cleaner (= 1.6.1)
   devise
+  devise-bootstrapped!
   devise-i18n
   dotenv-rails (= 2.2.1)
   email_spec (= 2.1.0)
