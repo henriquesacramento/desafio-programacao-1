@@ -1,4 +1,4 @@
-# Desafio de Programação
+# Instruções para executar o projeto
 
 ## Dependências
 
