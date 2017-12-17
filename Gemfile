@@ -49,6 +49,7 @@ group :test do
   gem 'vcr',                  '3.0.0'
   gem 'webmock',              '1.22.3'
   gem 'database_cleaner',     '1.6.1'
+  gem 'shoulda-context'
 end
 
 group :development, :test do
@@ -59,4 +60,6 @@ group :development, :test do
   gem 'awesome_print',         '1.7.0'
   gem 'spring-commands-rspec', '1.0.4'
   gem 'spring',                '2.0.2'
+  gem 'faker'
+
 end

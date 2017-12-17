@@ -18,3 +18,17 @@ RSpec.configure do |config|
   config.include EmailSpec::Matchers
   config.include ActiveSupport::Testing::TimeHelpers
 end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    # Choose a test framework:
+    with.test_framework :rspec
+
+    # Choose one or more libraries:
+    with.library :active_record
+    with.library :active_model
+    with.library :action_controller
+    # Or, choose the following (which implies all of the above):
+    with.library :rails
+  end
+end

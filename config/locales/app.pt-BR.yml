@@ -1,12 +1,14 @@
 pt-BR:
   models_and_attributes: &models_and_attributes
-    # models:
-    #   event:
-    #     one: Evento
-    #     other: Eventos
-    # attributes:
-    #     event:
-    #       name: Nome
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+    attributes:
+        user:
+          name: Nome
+          last_name: Sobrenome
+          username: Usuário
   activerecord:
     <<: *models_and_attributes
   activemodel:
