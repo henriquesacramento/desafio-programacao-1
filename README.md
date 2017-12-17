@@ -1,71 +1,77 @@
-# desafio-programacao
+# Desafio de Programação
 
-This project is a [Rails](http://rubyonrails.org/) application used to SOMETHING.
+## Dependências
 
-## Dependencies
+Para executar ess projeto você precisar ter:
 
-To run this project you need to have:
-
-* Ruby 2.4.2 - You can use [RVM](http://rvm.io)
+* Ruby 2.4.2 - Você poder usar [RVM](http://rvm.io)
 * [PostgreSQL](http://www.postgresql.org/)
   * OSX - [Postgress.app](http://postgresapp.com/)
   * Linux - `$ sudo apt-get install postgresql`
-  * Windows - [PostgreSQL for Windows](http://www.postgresql.org/download/windows/)
+  * Windows - [PostgreSQL para Windows](http://www.postgresql.org/download/windows/)
 
-If you plan to **integrate** this project to Heroku, you'll need:
+## Configurar o projeto
 
-* [Heroku Toolbelt](https://toolbelt.heroku.com/)
+1. Instale as dependências acima
+2. `$ git clone <REPOSITORY_URL> desafio-programacao-1` - Clone o projeto
+3. `$ cd desafio-programacao-1` - Acesse a pasta do projeto
+4. `$ bin/setup` - Execute o arquivo de configuração
+5. `$ bin/rspec` - Execute a suite de testes
 
-## Setup the project
+Se tudo estiver ok, você poderá executar o projeto
 
-1. Install the dependencies above
-2. `$ git clone <REPOSITORY_URL> desafio-programacao` - Clone the project
-3. `$ cd desafio-programacao` - Go into the project folder
-4. `$ bin/setup` - Run the setup script
-5. `$ bin/rspec` - Run the specs to see if everything is working fine
+Você pode ver um exemplo aqui: http://showterm.io/6a0054fb8b6b53a56ef2c#slow
 
-If everything goes OK, you can now run the project!
+## Executando o projeto
 
-You can see an example here: http://showterm.io/6a0054fb8b6b53a56ef2c#slow
+1. `$ bundle exec foreman start` - Executa o servidor
+2. Abra no seu navegador de preferência [http://localhost:3000](http://localhost:3000)
 
-## Running the project
+--------------
 
-1. `$ bundle exec foreman start` - Opens the server
-2. Open [http://localhost:3000](http://localhost:3000)
+# Desafio de programação 1
+A idéia deste desafio é nos permitir avaliar melhor as habilidades de candidatos à vagas de programador, de vários níveis.
 
-#### Running specs and checking coverage
+Este desafio deve ser feito por você em sua casa. Gaste o tempo que você quiser, porém normalmente você não deve precisar de mais do que algumas horas.
 
-`$ bundle exec rake spec` to run the specs.
+## Instruções de entrega do desafio
+1. Primeiro, faça um fork deste projeto para sua conta no Github (crie uma se você não possuir).
+1. Em seguida, implemente o projeto tal qual descrito abaixo, em seu próprio fork.
+1. Por fim, empurre todas as suas alterações para o seu fork no Github e envie um pull request para este repositório original. Se você já entrou em contato com alguém da Myfreecomm sobre uma vaga, avise também essa pessoa por email, incluindo no email o seu usuário no Github.
 
-`$ coverage=on bundle exec rake spec` to generate the coverage report then open the file `coverage/index.html` on your browser.
+## Instruções alternativas de entrega do desafio (caso você não queira que sua submissão seja pública)
+1. Faça um clone deste repositório.
+1. Em seguida, implemente o projeto tal qual descrito abaixo, em seu clone local.
+1. Por fim, envie via email um arquivo patch para seu contato na Myfreecomm.
 
-## Deploying the project to Heroku
+## Descrição do projeto
+Você recebeu um arquivo de texto com os dados de vendas da empresa. Precisamos criar uma maneira para que estes dados sejam importados para um banco de dados.
 
-:warning: This is the **ONLY RECOMMENDED WAY** to integrate this project, please do not push directly to Heroku.
+Sua tarefa é criar uma interface web que aceite upload de arquivos, normalize os dados e armazene-os em um banco de dados relacional.
 
-#### Deploying the project to a single/staging app on Heroku
+Sua aplicação web DEVE:
 
-1. You are working on `master` branch
-2. `$ bundle exec rake integrate` - Deploy everything to your app
-3. Check if the changes are working on Heroku
+1. Aceitar (via um formulário) o upload de arquivos separados por TAB com as seguintes colunas: purchaser name, item description, item price, purchase count, merchant address, merchant name. Você pode assumir que as colunas estarão sempre nesta ordem, que sempre haverá dados em cada coluna, e que sempre haverá uma linha de cabeçalho. Um arquivo de exemplo chamado example_input.tab está incluído neste repositório.
+1. Interpretar ("parsear") o arquivo recebido, normalizar os dados, e salvar corretamente a informação em um banco de dados relacional.
+1. Exibir a receita bruta total representada pelo arquivo enviado após o upload + parser.
+1. Ser escrita obrigatoriamente em Ruby 2.0+ ou Python 2.7+ (caso esteja entrevistando para uma vaga específica, utilize a linguagem solicitada pela vaga).
+1. Ser simples de configurar e rodar, funcionando em ambiente compatível com Unix (Linux ou Mac OS X). Ela deve utilizar apenas linguagens e bibliotecas livres ou gratuitas.
 
-You can see an example here: http://showterm.io/a4f25718904e532b321ad#slow
+Sua aplicação web não precisa:
 
-#### Deploying the project to production app on Heroku
+1. Lidar com autenticação ou autorização (pontos extras se ela fizer, mais pontos extras se a autenticação for feita via OAuth).
+1. Ser escrita usando algum framework específico (mas não há nada errado em usá-los também, use o que achar melhor).
+1. Ter uma aparência bonita.
 
-This is only applicable if you have two apps on Heroku (staging and production).
+## Avaliação
+Seu projeto será avaliado de acordo com os seguintes critérios. 
 
-First, check of your project has the correct configuration from [jumpup-heroku](https://github.com/Helabs/jumpup-heroku#usage).
+1. Sua aplicação preenche os requerimentos básicos?
+1. Você documentou a maneira de configurar o ambiente e rodar sua aplicação?
+1. Você seguiu as instruções de envio do desafio?
 
-1. You are working on `master` branch
-2. `$ git checkout production` - Checkout to `production` branch (this branch must be called `production`)
-3. `$ git merge master` - Merge the changes from `master` branch (don't use rebase here)
-4. `$ bundle exec rake integrate:production` - Deploy everything to your production app
-5. `$ git push -u origin production` - Send your changes to `origin` remote and set the upstream
-6. `$ git checkout master` - Checkout to `master` branch (so you don't commit directly on `production` branch)
+Adicionalmente, tentaremos verificar a sua familiarização com as bibliotecas padrões (standard libs), bem como sua experiência com programação orientada a objetos a partir da estrutura de seu projeto.
 
-:warning: All your daily work must be done on the `master` branch (or in a feature branch), never on `production` branch! The only thing you do on `production` is merging the changes from `master` and deploying to Heroku.
+### Referência
 
-## Generated with PAH
-
-Generated with [PAH](https://github.com/Helabs/pah), an open source project created and maintained by [HE:labs](http://helabs.com.br).
+Este desafio foi baseado neste outro desafio: https://github.com/lschallenges/data-engineering

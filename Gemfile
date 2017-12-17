@@ -19,7 +19,6 @@ gem 'neat',                   '1.7.2'
 gem 'bitters',                '1.1.0'
 gem 'refills',                '0.1.0'
 gem 'normalize-rails',        '3.0.3'
-gem 'rollbar',                '2.15.2'
 
 group :production, :staging do
   gem 'rails_12factor',       '0.0.3'
