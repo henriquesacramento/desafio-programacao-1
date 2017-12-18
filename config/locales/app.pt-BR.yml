@@ -9,6 +9,7 @@ pt-BR:
           name: Nome
           last_name: Sobrenome
           username: Usuário
+          login: "Usuário/E-mail"
   activerecord:
     <<: *models_and_attributes
   activemodel:

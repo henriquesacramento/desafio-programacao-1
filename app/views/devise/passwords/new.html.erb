@@ -1,20 +1,17 @@
-<div class="row">
-  <div class="col-lg-4 col-md-6 ml-auto mr-auto">
-    <h2 class="text-center">Recuperar senha</h2>
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= devise_error_messages! %>
-      <br>
-      <p class="text-center">Digite o endereço de e-mail que você utilizou para realizar o cadastro.</p>
+<%= bootstrap_devise_error_messages! %>
+<div class="panel panel-default devise-bs">
+  <div class="panel-heading">
+    <h4><%= t('.forgot_your_password', default: 'Forgot your password?') %></h4>
+  </div>
+  <div class="panel-body">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, role: "form" }) do |f| %>
       <div class="form-group">
-        <%= f.email_field :email, autofocus: true, placeholder: 'E-mail', class: 'form-control' %>
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
       </div>
 
-      <div class="form-group">
-        <%= f.submit "Enviar instruções para recuperar senha", class: 'btn btn-primary btn-block btn-lg' %>
-      </div>
+      <%= f.submit t('.send_me_reset_password_instructions', default: 'Send me reset password instructions'), class: 'btn btn-primary' %>
     <% end %>
-    <div class="text-center">
-      <%= render "devise/shared/links" %>
-    </div>
   </div>
 </div>
+<%= render 'devise/shared/links' %>

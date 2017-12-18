@@ -19,12 +19,13 @@ gem 'neat',                   '1.7.2'
 gem 'bitters',                '1.1.0'
 gem 'refills',                '0.1.0'
 gem 'normalize-rails',        '3.0.3'
-gem 'bootstrap',              '~> 4.0.0.alpha6'
+gem 'bootstrap-sass',         '~> 3.3.7'
+gem 'sprockets-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n',             '~> 5.0.0'
-gem 'devise-bootstrapped',    github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
-
+gem 'popper_js',              '~> 1.12.9'
+gem 'devise-bootstrap-views'
 
 group :production, :staging do
   gem 'rails_12factor',       '0.0.3'
