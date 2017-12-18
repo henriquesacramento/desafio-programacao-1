@@ -4,12 +4,18 @@ pt-BR:
       user:
         one: Usuário
         other: Usuários
+      customer:
+        one: Cliente
+        other: Clientes
     attributes:
         user:
           name: Nome
           last_name: Sobrenome
           username: Usuário
           login: "Usuário/E-mail"
+        customer:
+          name: Nome
+          last_name: Sobrenome
   activerecord:
     <<: *models_and_attributes
   activemodel:
