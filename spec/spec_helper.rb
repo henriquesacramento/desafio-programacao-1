@@ -1,4 +1,5 @@
 require 'shoulda/matchers'
+require 'factory_girl_rails'
 
 if ENV['coverage'] == 'on'
   require 'simplecov'
@@ -8,6 +9,7 @@ if ENV['coverage'] == 'on'
 end
 
 RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
   config.disable_monkey_patching!
   config.order = :random
   config.color = true

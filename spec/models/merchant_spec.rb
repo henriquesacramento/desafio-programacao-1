@@ -13,6 +13,9 @@ RSpec.describe Merchant, type: :model do
   it_should_behave_like "translate_attribute", attribute: 'name', result: 'Nome'
   it_should_behave_like "translate_attribute", attribute: 'address', result: 'Endereço'
 
+  # RELATIONSHIPS
+  it { should have_many(:products) }
+
   subject {
     described_class.new(FactoryGirl.attributes_for(:merchant))
   }

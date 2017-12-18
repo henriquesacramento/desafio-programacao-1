@@ -10,6 +10,9 @@ pt-BR:
       merchant:
         one: Comerciante
         other: Comerciantes
+      product:
+        one: Produto
+        other: Produtos
     attributes:
         user:
           name: Nome
@@ -22,6 +25,10 @@ pt-BR:
         merchant:
           name: Nome
           address: Endereço
+        product:
+          description: Descrição
+          price: Preço
+          merchant: Comerciante
   activerecord:
     <<: *models_and_attributes
   activemodel:
